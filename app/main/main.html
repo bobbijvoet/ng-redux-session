@@ -1,0 +1,26 @@
+<header-component sprint-number="$ctrl.sprintNumber" burned="$ctrl.burned"></header-component>
+
+<h2>Stories</h2>
+
+<ul>
+    <li ng-repeat="story in $ctrl.stories">
+        <story description="story.description" points="story.points" on-mark-done="$ctrl.addBurnedPoints({points:points})"></story>
+    </li>
+</ul>
+
+<h2>New story</h2>
+<form name="$ctrl.storyForm" ng-submit="$ctrl.submitStory()">
+    <label>
+        Points:
+        <story-points count="1" ng-model="$ctrl.story.points"></story-points>
+
+    </label>
+    <label>
+        Description:<br>
+        <input type="text" ng-model="$ctrl.story.description" demo-directive>
+    </label>
+
+    <input type="submit">
+</form>
+
+
