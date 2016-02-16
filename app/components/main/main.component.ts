@@ -10,9 +10,9 @@ var MainComponent = {
 
 export {MainComponent};
 
-MainController.$inject = ['mainService'];
+MainController.$inject = ['$rootScope', 'mainService'];
 
-function MainController(demoService) {
+function MainController($rootScope, mainService) {
     var vm = this;
     vm.sprintNumber = 1;
     vm.burned = 0;
@@ -21,7 +21,7 @@ function MainController(demoService) {
     vm.addBurnedPoints = addBurnedPoints;
 
     vm.$onInit = function () {
-        demoService.getStories().then(success, fail);
+        vm.stories = mainService.getStories().then(success, fail);
         vm.story = {
             points: 3
         };
@@ -49,6 +49,18 @@ function MainController(demoService) {
 
     function addBurnedPoints(value) {
         vm.burned += value.points;
+
+        $rootScope.$emit('point', value.points);
+
+        var totalPoints = vm.stories.reduce(function (prev, cur) {
+            return prev + cur.points
+        }, 0);
+
+        if (vm.burned === totalPoints) {
+            $rootScope.$emit('sprint', vm.sprintNumber);
+        }
+
+
     }
 
 }

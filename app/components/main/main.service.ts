@@ -14,7 +14,6 @@ function MainService($http, $q, mainConstant) {
         }
 
         function getStoriesFail(error) {
-            console.log(error);
             return $q.reject(error);
         }
     }
