@@ -1,9 +1,11 @@
 import template from './header.html!text'
 
-export default {
+var HeaderComponent = {
     bindings: {
         sprintNumber: '<',
-        burned:'<'
+        burned: '<'
     },
     template: template
-}
+};
+
+export {HeaderComponent};

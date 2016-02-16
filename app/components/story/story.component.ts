@@ -1,27 +1,28 @@
 import template from './story.html!text'
 
-export default {
+var StoryComponent = {
     bindings: {
         points: '<',
         description: '<',
         done: '<',
-        onMarkDone:'&'
+        onMarkDone: '&'
     },
 
     controller: StoryController,
 
     template: template
-}
+};
 
+export {StoryComponent};
 
 function StoryController() {
 
     var vm = this;
     vm.onDoneChange = onDoneChange;
 
-    function onDoneChange(){
-        if(vm.done){
-            vm.onMarkDone({points:vm.points})
+    function onDoneChange() {
+        if (vm.done) {
+            vm.onMarkDone({points: vm.points})
         }
     }
 }

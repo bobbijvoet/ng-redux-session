@@ -1,6 +1,6 @@
-demoService.$inject = ['$http', '$q', 'mainConstant'];
+MainService.$inject = ['$http', '$q', 'mainConstant'];
 
-function demoService($http, $q, mainConstant) {
+function MainService($http, $q, mainConstant) {
     return {
         getStories: getStories
     };
@@ -20,4 +20,4 @@ function demoService($http, $q, mainConstant) {
     }
 }
 
-export default demoService;
+export {MainService};
