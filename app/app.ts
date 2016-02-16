@@ -8,6 +8,7 @@ import {MainService} from "./components/main/main.service.ts";
 import {MainConstant} from "./components/main/main.constant.ts";
 import {StoryComponent} from "./components/story/story.component.ts";
 import {StoryPointsComponent} from "./components/story/storyPoints.component.ts";
+import {rootReducerConfig} from "./config/rootReducer.ts";
 
 var app = angular.module('app', ['ngRedux']);
 
@@ -23,3 +24,5 @@ app.factory('mainService', MainService);
 // Constants
 app.constant('mainConstant', MainConstant);
 
+// Config
+app.config(rootReducerConfig);
