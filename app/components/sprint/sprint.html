@@ -1,0 +1,8 @@
+<header-component sprint-number="$ctrl.number" burned="$ctrl.burned"></header-component>
+
+<h2>Stories</h2>
+<ul>
+    <li ng-repeat="story in $ctrl.stories">
+        <story description="story.description" points="story.points" on-mark-done="$ctrl.addBurnedPoints({points:points})"></story>
+    </li>
+</ul>

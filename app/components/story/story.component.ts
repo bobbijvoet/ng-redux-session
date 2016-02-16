@@ -4,7 +4,6 @@ var StoryComponent = {
     bindings: {
         points: '<',
         description: '<',
-        done: '<',
         onMarkDone: '&'
     },
 
