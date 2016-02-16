@@ -3,9 +3,11 @@ import 'angular-resource';
 
 import 'app.module.ts';
 
-import 'main/main.module.ts';
-import 'story-component/story.module.ts';
-import 'header-component/header.module.ts';
+import template from './app.html!text';
+
+import 'components/main/main.module.ts';
+import 'components/story/story.module.ts';
+import 'components/header/header.module.ts';
 
 
 

@@ -43,16 +43,12 @@
 
         transpiler: 'typescript',
 
-        map: {
-            "ts": "../node_modules/plugin-typescript/lib/plugin.js",
-            "typescript": "../node_modules/typescript/lib/typescript.js",
-            //TODO: Investigate double ../ for text plugin
-            "text": "../../node_modules/system-text/text.js"
-        },
-
         paths: {
             'angular': '../node_modules/angular/angular.js',
-            'angular-resource': '../node_modules/angular-resource/angular-resource.js'
+            'angular-resource': '../node_modules/angular-resource/angular-resource.js',
+            "ts": "../node_modules/plugin-typescript/lib/plugin.js",
+            "typescript": "../node_modules/typescript/lib/typescript.js",
+            "text": "../node_modules/system-text/text.js"
         }
     });
 </script>
