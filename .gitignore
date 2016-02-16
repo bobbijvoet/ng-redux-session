@@ -1,0 +1,14 @@
+node_modules/*
+typings/*
+build/*
+dist/*
+target/*
+
+# this file is only for local reference
+/npm-shrinkwrap.orig.json
+
+npm-debug.log
+
+index-*.html
+
+.idea

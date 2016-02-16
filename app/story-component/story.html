@@ -1,0 +1,10 @@
+<div>
+    <input type="checkbox"
+           ng-if="!$ctrl.done"
+           ng-model="$ctrl.done"
+           ng-change="$ctrl.onDoneChange()"
+    >
+    <span ng-class="{'done':$ctrl.done}">{{$ctrl.description}}</span> <span class="story--points">{{$ctrl.points}}</span>
+</div>
+
+

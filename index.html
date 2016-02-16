@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>App</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
+
+
+    <style>
+
+        body {
+            font-family:'Helvetica Neue';
+        }
+
+        .done {
+            text-decoration:line-through;
+        }
+
+        .story--points {
+            color:#FFF;
+            background-color:#2b81af;
+            border-radius: 50px;
+            padding: 2px 12px;
+        }
+    </style>
+
+</head>
+
+<!-- This file is only used for serving your webapp -->
+
+<body>
+<div ng-include="'app/app.html'"></div>
+
+<script src="node_modules/systemjs/dist/system.js"></script>
+
+<script>
+    // Configure module loader
+    System.config({
+        baseURL: '/app',
+
+        transpiler: 'typescript',
+
+        map: {
+            "ts": "../node_modules/plugin-typescript/lib/plugin.js",
+            "typescript": "../node_modules/typescript/lib/typescript.js",
+            //TODO: Investigate double ../ for text plugin
+            "text": "../../node_modules/system-text/text.js"
+        },
+
+        paths: {
+            'angular': '../node_modules/angular/angular.js',
+            'angular-resource': '../node_modules/angular-resource/angular-resource.js'
+        }
+    });
+</script>
+<script>
+    System.import('app.ts').then(function () {
+        angular.bootstrap(document, ['app']);
+    });
+</script>
+
+<!-- deps:js-->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- endinject -->
+
+<!-- mockconfig:js -->
+<!-- endinject -->
+
+</body>
+</html>
