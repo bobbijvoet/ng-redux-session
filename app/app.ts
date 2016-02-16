@@ -1,5 +1,6 @@
 import 'angular';
 import 'angular-resource';
+import 'ng-redux';
 
 import {HeaderComponent} from "./components/header/header.component.ts";
 import {MainComponent} from "./components/main/main.component.ts";
@@ -8,7 +9,7 @@ import {MainConstant} from "./components/main/main.constant.ts";
 import {StoryComponent} from "./components/story/story.component.ts";
 import {StoryPointsComponent} from "./components/story/storyPoints.component.ts";
 
-var app = angular.module('app', []);
+var app = angular.module('app', ['ngRedux']);
 
 // Components
 app.component('headerComponent', HeaderComponent);
