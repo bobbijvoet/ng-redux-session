@@ -1,12 +1,14 @@
-import template from "./main.html!text"
+import template from './main.html!text';
 
-export default {
+var MainComponent = {
     bindings: {
         count: '='
     },
     controller: MainController,
     template: template
-}
+};
+
+export {MainComponent};
 
 MainController.$inject = ['mainService'];
 

@@ -1,6 +1,6 @@
 import template from "./storyPoints.html!text"
 
-export default {
+var StoryPointsComponent = {
     bindings: {
         count: '=',
         ngModel: '='
@@ -24,4 +24,6 @@ export default {
         this.decrement = decrement;
     },
     template: template
-}
+};
+
+export {StoryPointsComponent};
