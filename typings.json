@@ -2,6 +2,7 @@
   "dependencies": {},
   "devDependencies": {},
   "ambientDependencies": {
-    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#17ef40452039d19e06dc2a3815ea898c505860fa"
+    "angular": "github:DefinitelyTyped/DefinitelyTyped/angularjs/angular.d.ts#17ef40452039d19e06dc2a3815ea898c505860fa",
+    "sinon": "github:DefinitelyTyped/DefinitelyTyped/sinon/sinon.d.ts#6e7d83167d86d857817bd492786f8304f5c4a0e4"
   }
 }

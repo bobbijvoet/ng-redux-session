@@ -1,0 +1,19 @@
+{
+    "stories": [
+        {
+            "points": 1,
+            "description": "Some lil story",
+            "done": false
+        },
+        {
+            "points": 8,
+            "description": "Some bigger story",
+            "done": false
+        },
+        {
+            "points": 20,
+            "description": "Some huge story",
+            "done": false
+        }
+    ]
+}
