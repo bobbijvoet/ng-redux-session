@@ -59,24 +59,24 @@
         angular.bootstrap(document, ['app']);
     });
 
-//    System.import('sinon').then(function () {
-//
-//        server = sinon.fakeServer.create();
-//        server.xhr.useFilters = true;
-//
-//        server.autoRespond = true;
-//
-//        server.respondWith("GET", 'https://api.example.com/sprint',
-//            [200, { "Content-Type": "application/json" },
-//                '{"stories":[{"points":1,"description":"Some lil story","done":false},{"points":8,"description":"Some bigger story","done":false},{"points":20,"description":"Some huge story","done":false}]}']);
-//
-//
-//        this.server.respond();
-//        server.xhr.addFilter(function(method, url) {
-//            return !url.match(/example.com/);
-//        });
-//
-//    });
+    System.import('sinon').then(function () {
+
+        server = sinon.fakeServer.create();
+        server.xhr.useFilters = true;
+
+        server.autoRespond = true;
+
+        server.respondWith("GET", 'https://api.example.com/sprint',
+            [200, { "Content-Type": "application/json" },
+                '{"stories":[{"points":1,"description":"Some lil story","done":false},{"points":8,"description":"Some bigger story","done":false},{"points":20,"description":"Some huge story","done":false}]}']);
+
+
+        this.server.respond();
+        server.xhr.addFilter(function(method, url) {
+            return !url.match(/example.com/);
+        });
+
+    });
 
 </script>
 
