@@ -1,53 +1,54 @@
 {
-    "name": "ng-redux-session",
-    "version": "1.0.0",
-    "description": "",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bobbijvoet/ng-redux-session"
-    },
-    "scripts": {
-        "dev": "lite-server"
-    },
-    "author": "Bob Bijvoet",
-    "license": "MIT",
-    "devDependencies": {
-        "browser-sync": "^2.9.2",
-        "del": "^2.0.1",
-        "event-stream": "^3.3.1",
-        "fs-extra": "^0.24.0",
-        "jasmine-core": "^2.3.4",
-        "jasmine-reporters": "^2.0.7",
-        "jshint-stylish": "^2.0.1",
-        "karma": "^0.13.9",
-        "karma-chrome-launcher": "^0.2.0",
-        "karma-coverage": "^0.5.2",
-        "karma-fixture": "^0.2.5",
-        "karma-html2js-preprocessor": "^0.1.0",
-        "karma-jasmine": "^0.3.6",
-        "karma-json-fixtures-preprocessor": "0.0.5",
-        "karma-junit-reporter": "^0.3.6",
-        "karma-ng-html2js-preprocessor": "^0.1.2",
-        "karma-phantomjs-launcher": "^0.2.1",
-        "karma-spec-reporter": "0.0.20",
-        "lite-server": "^2.0.1",
-        "lodash": "^3.10.1",
-        "ng-dependencies": "^0.2.0",
-        "node-bourbon": "^4.2.3",
-        "phantomjs": "^1.9.18",
-        "plugin-typescript": "^3.0.0",
-        "request": "^2.61.0",
-        "sorted-object": "^1.0.0",
-        "system-text": "^0.1.0",
-        "systemjs": "^0.19.20",
-        "systemjs-builder": "^0.15.7",
-        "through": "^2.3.8",
-        "typescript": "^1.7.5",
-        "wiredep": "^2.2.2",
-        "yargs": "^3.24.0"
-    },
-    "dependencies": {
-        "angular": "^1.5.0",
-        "angular-resource": "^1.5.0"
-    }
+  "name": "ng-redux-session",
+  "version": "1.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobbijvoet/ng-redux-session"
+  },
+  "scripts": {
+    "dev": "lite-server"
+  },
+  "author": "Bob Bijvoet",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.9.2",
+    "del": "^2.0.1",
+    "event-stream": "^3.3.1",
+    "fs-extra": "^0.24.0",
+    "jasmine-core": "^2.3.4",
+    "jasmine-reporters": "^2.0.7",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "^0.5.2",
+    "karma-fixture": "^0.2.5",
+    "karma-html2js-preprocessor": "^0.1.0",
+    "karma-jasmine": "^0.3.6",
+    "karma-json-fixtures-preprocessor": "0.0.5",
+    "karma-junit-reporter": "^0.3.6",
+    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-spec-reporter": "0.0.20",
+    "lite-server": "^2.0.1",
+    "lodash": "^3.10.1",
+    "ng-dependencies": "^0.2.0",
+    "node-bourbon": "^4.2.3",
+    "phantomjs": "^1.9.18",
+    "plugin-typescript": "^3.0.0",
+    "request": "^2.61.0",
+    "sorted-object": "^1.0.0",
+    "system-text": "^0.1.0",
+    "systemjs": "^0.19.20",
+    "systemjs-builder": "^0.15.7",
+    "through": "^2.3.8",
+    "typescript": "^1.7.5",
+    "wiredep": "^2.2.2",
+    "yargs": "^3.24.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.0",
+    "sinon": "^1.17.3"
+  }
 }

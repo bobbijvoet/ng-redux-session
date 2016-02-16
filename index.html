@@ -48,7 +48,9 @@
             'typescript': '/../node_modules/typescript/lib/typescript.js',
             'text': '/../node_modules/system-text/text.js',
             'angular': '../node_modules/angular/angular.js',
-            'angular-resource': '../node_modules/angular-resource/angular-resource.js'
+            'angular-resource': '../node_modules/angular-resource/angular-resource.js',
+            'sinon': '../node_modules/sinon/pkg/sinon-1.17.3.js'
+
         }
     });
 </script>
@@ -56,6 +58,26 @@
     System.import('app.ts').then(function () {
         angular.bootstrap(document, ['app']);
     });
+
+    System.import('sinon').then(function () {
+
+        server = sinon.fakeServer.create();
+        server.xhr.useFilters = true;
+
+        server.autoRespond = true;
+
+        server.respondWith("GET", 'https://api.example.com/sprint',
+            [200, { "Content-Type": "application/json" },
+                '{"stories":[{"points":1,"description":"Some lil story","done":false},{"points":8,"description":"Some bigger story","done":false},{"points":20,"description":"Some huge story","done":false}]}']);
+
+
+        this.server.respond();
+        server.xhr.addFilter(function(method, url) {
+            return !url.match(/example.com/);
+        });
+
+    });
+
 </script>
 
 <!-- deps:js-->
