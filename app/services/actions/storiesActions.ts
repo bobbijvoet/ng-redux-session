@@ -24,6 +24,7 @@ function StoriesActions(mainService) {
             }     else {
                 action.payload.notification = 'Stories burned: ' + story.points;
             }
+            action.payload.points = story.points;
 
             dispatch(action);
         };
