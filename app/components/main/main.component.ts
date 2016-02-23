@@ -14,7 +14,8 @@ function MainController($ngRedux, sprintsActions, storiesActions) {
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
-            stories: state.stories.stories
+            stories: state.stories.stories,
+            notification: state.notification.notification
         };
     }, angular.merge({}, sprintsActions, storiesActions))(vm);
 

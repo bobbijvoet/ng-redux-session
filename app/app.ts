@@ -15,6 +15,7 @@ import {SprintsActions} from "./services/actions/sprintsActions.ts";
 import {StoriesActions} from "./services/actions/storiesActions.ts";
 import {PromiseMiddleware} from "./services/middleware/promiseMiddleware.ts";
 import {LoggerMiddleware} from "./services/middleware/loggerMiddleware.ts";
+import {ThunkMiddleware} from "./services/middleware/thunkMiddleware.ts";
 
 var app = angular.module('app', ['ngRedux']);
 
@@ -35,6 +36,7 @@ app.factory('storiesActions', StoriesActions);
 // Middleware
 app.factory('promiseMiddleware', PromiseMiddleware);
 app.factory('loggerMiddleware', LoggerMiddleware);
+app.factory('thunkMiddleware', ThunkMiddleware);
 
 // Constants
 app.constant('mainConstant', MainConstant);
