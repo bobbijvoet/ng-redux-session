@@ -2,9 +2,8 @@ import template from './story.html!text'
 
 var StoryComponent = {
     bindings: {
-        points: '<',
-        description: '<',
-        onMarkDone: '&'
+        story: '=',
+        onMarkDone: '<'
     },
 
     controller: StoryController,
@@ -21,7 +20,7 @@ function StoryController() {
 
     function onDoneChange() {
         if (vm.done) {
-            vm.onMarkDone({points: vm.points})
+            vm.onMarkDone(vm.story);
         }
     }
 }
