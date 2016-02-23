@@ -2,6 +2,7 @@ import 'angular';
 import 'angular-resource';
 import 'ng-redux';
 
+
 import {HeaderComponent} from "./components/header/header.component.ts";
 import {MainComponent} from "./components/main/main.component.ts";
 import {MainService} from "./components/main/main.service.ts";
