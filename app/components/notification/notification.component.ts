@@ -1,7 +1,9 @@
 import template from './notification.html!text';
 
 var NotificationComponent = {
-    bindings: {},
+    bindings: {
+        message: '='
+    },
     controller: NotificationController,
     template: template
 };
@@ -13,15 +15,15 @@ NotificationController.$inject = ['$rootScope', '$timeout'];
 function NotificationController($rootScope, $timeout) {
     var vm = this;
 
-    $rootScope.$on('point', function (event, points) {
-        vm.message = `${points} points burned!`;
-        vm.visible = true;
+    //$rootScope.$on('point', function (event, points) {
+    //    vm.message = `${points} points burned!`;
+    //    vm.visible = true;
+    //
+    //});
+    //
+    //$rootScope.$on('sprint', function (event, sprint) {
+    //    vm.message = `Sprint ${sprint} complete!`;
+    //});
 
-    });
-
-    $rootScope.$on('sprint', function (event, sprint) {
-        vm.message = `Sprint ${sprint} complete!`;
-    });
-
-    var hideNotification = $timeout
+    //var hideNotification = $timeout
 }

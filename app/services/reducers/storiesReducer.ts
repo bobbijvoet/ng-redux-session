@@ -15,7 +15,7 @@ function storiesReducer(state, action) {
 
         case 'FINISH_STORY':
             var story = state.stories.find(function(story) {
-               return story.id === action.payload;
+               return story.id === action.payload.id;
             });
 
             story.done = true;
