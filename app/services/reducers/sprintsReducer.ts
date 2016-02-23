@@ -1,5 +1,7 @@
 var initialState = {
-    sprints: []
+    sprint: null,
+    number:0,
+    burnedPoints:0
 };
 
 function sprintsReducer(state, action) {
@@ -9,8 +11,13 @@ function sprintsReducer(state, action) {
 
     switch (action.type) {
         case 'FETCH_SPRINT_FULFILLED':
-            state.sprints = [action.payload];
+            state.sprint = action.payload;
+            state.number = action.payload.number;
 
+            break;
+
+        case 'FINISH_STORY':
+            state.burnedPoints += action.payload.points;
             break;
     }
 

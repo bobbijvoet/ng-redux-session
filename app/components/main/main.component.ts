@@ -14,10 +14,12 @@ function MainController($ngRedux, sprintsActions, storiesActions) {
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
+            burnedPoints: state.sprint.burnedPoints,
+            number: state.sprint.number,
             stories: state.stories.stories,
             notification: state.notification.notification
         };
-    }, angular.merge({}, sprintsActions, storiesActions))(vm);
+    }, Object.assign({}, sprintsActions, storiesActions))(vm);
 
     vm.$onInit = $onInit;
 
@@ -25,13 +27,4 @@ function MainController($ngRedux, sprintsActions, storiesActions) {
         vm.getSprint();
     }
 
-    //function success(response) {
-    //    vm.stories = response.stories;
-    //    vm.sprintNumber = response.number;
-    //
-    //}
-    //
-    //function fail(error) {
-    //    vm.error = error;
-    //}
 }
