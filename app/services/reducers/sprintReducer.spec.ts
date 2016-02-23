@@ -1,20 +1,25 @@
-import {sprintsReducer} from "./sprintsReducer.ts";
+import {sprintReducer} from "./sprintReducer.ts";
 
 describe('given the sprint reducer', function () {
 
     describe('when initializing', function () {
-        var state = sprintsReducer(undefined,undefined);
+        var state = sprintReducer(undefined, undefined);
 
         it('should return the initial state', function () {
-            expect(state).toEqual({sprints: []});
+            expect(state).toEqual({number: 0, burnedPoints: 0});
         });
     });
 
     describe('when fetched a sprint', function () {
-        var state = sprintsReducer({}, {type: 'FETCH_SPRINT_FULFILLED', payload: ['a', 'b', 'c']});
+        var state = sprintReducer({}, {
+            type: 'FETCH_SPRINT_FULFILLED',
+            payload: {
+                number: 1
+            }
+        });
 
-        it('should populate the sprint array', function () {
-            expect(state).toEqual({sprints: [['a', 'b', 'c']]});
+        it('should set the sprint number', function () {
+            expect(state.number).toEqual(1);
         });
     });
 
