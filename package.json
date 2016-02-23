@@ -39,6 +39,7 @@
     "ng-dependencies": "^0.2.0",
     "node-bourbon": "^4.2.3",
     "phantomjs": "^1.9.18",
+    "phantomjs-polyfill": "0.0.1",
     "plugin-typescript": "^3.0.0",
     "request": "^2.61.0",
     "sorted-object": "^1.0.0",
