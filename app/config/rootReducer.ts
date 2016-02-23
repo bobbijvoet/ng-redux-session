@@ -6,8 +6,8 @@ rootReducerConfig.$inject = ['$ngReduxProvider'];
 
 function rootReducerConfig($ngReduxProvider) {
     let reducer = combineReducers({
-        //stories: storiesReducer,
-        //sprints: sprintsReducer
+        stories: storiesReducer,
+        sprints: sprintsReducer
     });
 
     $ngReduxProvider.createStoreWith(reducer);

@@ -1,17 +1,21 @@
 {
+    "id": "1",
     "number":1,
     "stories": [
         {
+            "id": "1",
             "points": 1,
             "description": "Some lil story",
             "done": false
         },
         {
+            "id": "2",
             "points": 8,
             "description": "Some bigger story",
             "done": false
         },
         {
+            "id": "3",
             "points": 20,
             "description": "Some huge story",
             "done": false
