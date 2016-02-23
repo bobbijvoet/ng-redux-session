@@ -5,17 +5,15 @@ import {sprintsReducer} from "./sprintsReducer.ts";
 rootReducerConfig.$inject = ['$ngReduxProvider'];
 
 function rootReducerConfig($ngReduxProvider) {
-    let reducer = combineReducers({
+    var reducer = combineReducers({
         stories: storiesReducer,
         sprints: sprintsReducer
     });
 
     $ngReduxProvider.createStoreWith(reducer, [
-        //'thunkMiddleware',
-        //'promiseMiddleware',
-        //'loggerMiddleware'
+        'promiseMiddleware',
+        'loggerMiddleware'
     ]);
-
 }
 
 export {rootReducerConfig};

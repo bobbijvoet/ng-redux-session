@@ -7,22 +7,30 @@ var MainComponent = {
 
 export {MainComponent};
 
-MainController.$inject = ['mainService'];
+MainController.$inject = ['$ngRedux', 'sprintsActions', 'storiesActions'];
 
-function MainController(mainService) {
+function MainController($ngRedux, sprintsActions, storiesActions) {
     var vm = this;
 
-    vm.$onInit = function () {
-        vm.stories = mainService.getStories().then(success, fail);
-    };
+    var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
+        return {
+            stories: state.stories.stories
+        };
+    }, angular.merge({}, sprintsActions, storiesActions))(vm);
 
-    function success(response) {
-        vm.stories = response.stories;
-        vm.sprintNumber = response.number;
+    vm.$onInit = $onInit;
 
+    function $onInit() {
+        vm.getSprint();
     }
 
-    function fail(error) {
-        vm.error = error;
-    }
+    //function success(response) {
+    //    vm.stories = response.stories;
+    //    vm.sprintNumber = response.number;
+    //
+    //}
+    //
+    //function fail(error) {
+    //    vm.error = error;
+    //}
 }

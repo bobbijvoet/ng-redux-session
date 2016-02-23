@@ -2,10 +2,10 @@ MainService.$inject = ['$http', '$q', 'mainConstant'];
 
 function MainService($http, $q, mainConstant) {
     return {
-        getStories: getStories
+        getSprint: getSprint
     };
 
-    function getStories() {
+    function getSprint() {
         return $http.get(`${mainConstant.endpoint}/sprint`, {})
             .then(getStoriesSuccess, getStoriesFail);
 

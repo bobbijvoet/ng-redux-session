@@ -1,15 +1,8 @@
+StoriesActions.$inject = ['mainService'];
 
-function StoriesActions() {
+function StoriesActions(mainService) {
 
-    return {
-        finishStory: finishStory
-    };
-
-    function finishStory() {
-        return {
-            type: 'FINISH_STORY'
-        }
-    }
+    return {};
 }
 
 export {StoriesActions};

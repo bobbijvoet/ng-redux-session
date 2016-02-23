@@ -9,7 +9,7 @@ function storiesReducer(state, action) {
 
     switch (action.type) {
         case 'FETCH_SPRINT_FULFILLED': {
-            state.stories = [action.payload.stories];
+            state.stories = action.payload.stories;
         }
     }
 
