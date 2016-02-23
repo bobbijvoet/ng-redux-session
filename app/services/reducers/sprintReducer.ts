@@ -1,10 +1,10 @@
 var initialState = {
     sprint: null,
-    number:0,
-    burnedPoints:0
+    number: 0,
+    burnedPoints: 0
 };
 
-function sprintsReducer(state, action) {
+function sprintReducer(state, action) {
     if (typeof state === 'undefined') {
         return initialState
     }
@@ -24,4 +24,4 @@ function sprintsReducer(state, action) {
     return state;
 }
 
-export {sprintsReducer};
+export {sprintReducer};

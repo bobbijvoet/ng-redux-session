@@ -1,6 +1,5 @@
 import {sprintsReducer} from "./sprintsReducer.ts";
 
-
 describe('given the sprint reducer', function () {
 
     describe('when initializing', function () {
