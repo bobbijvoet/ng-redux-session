@@ -8,9 +8,10 @@ function sprintsReducer(state, action) {
     }
 
     switch (action.type) {
-        case 'FETCH_SPRINT_FULFILLED': {
+        case 'FETCH_SPRINT_FULFILLED':
             state.sprints = [action.payload];
-        }
+
+            break;
     }
 
     return state;

@@ -3,7 +3,8 @@ import template from './sprint.html!text'
 var SprintComponent = {
     bindings: {
         number: '<',
-        stories: '<'
+        stories: '=',
+        onMarkDone: '<'
     },
     controller: SprintController,
     template: template
