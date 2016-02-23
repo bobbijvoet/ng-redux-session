@@ -4,20 +4,14 @@ module.exports = function (config) {
     config.set({
         // base path, that will be used to resolve files and exclude
         // frameworks to use
-        frameworks: ['jasmine', 'fixture'],
-        
+        frameworks: ['jasmine', 'systemjs'],
+
         basePath: '..',
 
         // list of files / patterns to load in the browser
         files: [
-            'bower_components/angular/angular.js',
-            'bower_components/angular-mocks/angular-mocks.js',
-            'bower_components/angular-resource/angular-resource.js',
-            'test/mocks/**/*',
-            'app/*.module.js',
-            'app/**/*.module.js',
-            'app/**/*.js',
-            'app/**/*.html'
+            'node_modules/angular/angular.js',
+            'app/**/*.ts'
         ],
 
         // list of files to exclude
@@ -25,7 +19,6 @@ module.exports = function (config) {
 
         // test results reporter to use
         // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-        reporters: ['spec'],
 
         jsonFixturesPreprocessor: {
             variableName: '__json__'
@@ -36,13 +29,50 @@ module.exports = function (config) {
             stripPrefix: 'app/',
             moduleName: packageName + '.test.templates'
         },
-
         preprocessors: {
-            '**/*.html': ['ng-html2js'],
-            '**/*.json': ['json_fixtures']
+            '**/*.ts': ['typescript']
         },
 
-        specReporter : {
+        //plugins: ['karma-systemjs'],
+
+        typescriptPreprocessor: {
+            // options passed to the typescript compiler
+            options: {
+                sourceMap: false, // (optional) Generates corresponding .map file.
+                target: 'ES5', // (optional) Specify ECMAScript target version: 'ES3' (default), or 'ES5'
+                module: 'amd', // (optional) Specify module code generation: 'commonjs' or 'amd'
+                noImplicitAny: false, // (optional) Warn on expressions and declarations with an implied 'any' type.
+                noResolve: true, // (optional) Skip resolution and preprocessing.
+                removeComments: true, // (optional) Do not emit comments to output.
+                concatenateOutput: false // (optional) Concatenate and emit output to single file. By default true if module option is omited, otherwise false.
+            },
+            // extra typing definitions to pass to the compiler (globs allowed)
+            typings: [
+                'typings/tsd.d.ts'
+            ],
+            // transforming the filenames
+            transformPath: function(path) {
+                return path.replace(/\.ts$/, '.js');
+            }
+        },
+        systemjs: {
+            // Path to your SystemJS configuration file
+            configFile: 'system.conf.js',
+
+            // Patterns for files that you want Karma to make available, but not loaded until a module requests them. eg. Third-party libraries.
+            serveFiles: [
+                'app/**/*.js'
+            ],
+
+            // SystemJS configuration specifically for tests, added after your config file.
+            // Good for adding test libraries and mock modules
+            config: {
+                paths: {
+                    'angular-mocks': 'bower_components/angular-mocks/angular-mocks.js'
+                }
+            }
+        },
+        specReporter: {
             // Windows does not like the unicode characters, so revert to plain ascii
             prefixes: {
                 success: '[v] ',

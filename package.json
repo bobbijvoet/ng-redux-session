@@ -7,7 +7,8 @@
     "url": "https://github.com/bobbijvoet/ng-redux-session"
   },
   "scripts": {
-    "dev": "lite-server"
+    "dev": "lite-server",
+    "test": "karma start ./test/karma.conf.js"
   },
   "author": "Bob Bijvoet",
   "license": "MIT",
@@ -31,6 +32,8 @@
     "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.20",
+    "karma-systemjs": "^0.11.0",
+    "karma-typescript-preprocessor": "0.0.21",
     "lite-server": "^2.0.1",
     "lodash": "^3.10.1",
     "ng-dependencies": "^0.2.0",
