@@ -10,7 +10,12 @@ function rootReducerConfig($ngReduxProvider) {
         //sprints: sprintsReducer
     });
 
-    $ngReduxProvider.createStoreWith(reducer);
+    $ngReduxProvider.createStoreWith(reducer, [
+        //'thunkMiddleware',
+        //'promiseMiddleware',
+        //'loggerMiddleware'
+    ]);
+
 }
 
 export {rootReducerConfig};

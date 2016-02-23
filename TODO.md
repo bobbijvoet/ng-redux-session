@@ -23,4 +23,5 @@ Steps:
 - Create STORY_FINISHED action
 - Pass action through to components
 - Add unit tests
+- Show loading indicator
 - Create time out for notification 
