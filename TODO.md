@@ -16,9 +16,11 @@ What we have prepared:
 - Karma configuration
 
 Steps:
+- Combine reducers
 - Set initial state for stories
-- Connect main component to vm
-- Get stories from backend (using promise middleware)
-- Create STORY_FINISHED action, show notification based on actions
+- Connect Main component to vm
+- Get stories via redux
+- Create STORY_FINISHED action
+- Pass action through to components
 - Add unit tests
 - Create time out for notification 
