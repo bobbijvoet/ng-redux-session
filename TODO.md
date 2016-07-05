@@ -7,6 +7,8 @@
 
 
 ##Workshop
+
+
 The application:
 - Two way data binding for service result
 - A couple of events being emitted
@@ -24,3 +26,7 @@ Steps:
 - Pass action through to components
 - Add unit tests
 - Create time out for notification 
+
+
+##Workshop additions
+- Create simple add story step

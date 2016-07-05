@@ -2,7 +2,7 @@ import template from './notification.html!text';
 
 var NotificationComponent = {
     bindings: {
-        message: '='
+        message: '<'
     },
     controller: NotificationController,
     template: template

@@ -15,12 +15,5 @@ export {StoryComponent};
 
 function StoryController() {
 
-    var vm = this;
-    vm.onDoneChange = onDoneChange;
 
-    function onDoneChange() {
-        if (vm.done) {
-            vm.onMarkDone(vm.story);
-        }
-    }
 }
