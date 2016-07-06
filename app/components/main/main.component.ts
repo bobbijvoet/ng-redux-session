@@ -21,18 +21,6 @@ function MainController($ngRedux, stepsActions, addressActions) {
         };
     }, Object.assign({}, stepsActions, addressActions))(vm);
 
-    vm.$onInit = $onInit;
-
-
-    function $onInit(){
-
-    }
-
-    vm.gotoNext = function(){
-        if(vm.fetchedAddress) {
-            vm.nextStep();
-        }
-    }
-
+    vm.$onDestroy = unsubscribe;
 
 }

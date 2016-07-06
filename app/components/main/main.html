@@ -27,8 +27,8 @@
         </div>
     </div>
     <div class="panel-body">
-        <enter-address ng-if="$ctrl.stepIndex === 0"></enter-address>
-        <check-address ng-if="$ctrl.stepIndex === 1"></check-address>
+        <enter-address ng-if="$ctrl.stepIndex === 0" on-next-click="$ctrl.nextStep"></enter-address>
+        <check-address ng-if="$ctrl.stepIndex === 1" on-next-click="$ctrl.nextStep" address="$ctrl.fetchedAddress"></check-address>
         <done ng-if="$ctrl.stepIndex === 2"></done>
     </div>
 </div>

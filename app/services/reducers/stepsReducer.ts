@@ -1,16 +1,13 @@
 var initialState = {
     steps: [
         {
-            name: 'stap1',
-            template: 'app/templates/tpl.html'
+            name: 'Invoeren'
         },
         {
-            name: 'Controleren',
-            template: 'app/templates/tpl2.html'
+            name: 'Controleren'
         },
         {
-            name: 'Adres gewijzigd',
-            template: 'template'
+            name: 'Adres gewijzigd'
         }
     ],
     index: 0,

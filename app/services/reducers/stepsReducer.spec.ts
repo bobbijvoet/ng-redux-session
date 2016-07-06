@@ -31,7 +31,7 @@ describe('given the steps reducer', function () {
 
     describe('when initializing', function () {
         it('should set the initial step', function () {
-            expect(state.currentStep.name).toEqual('stap1');
+            expect(state.currentStep.name).toEqual('Invoeren');
         });
     });
 
