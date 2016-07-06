@@ -7,9 +7,9 @@ var MainComponent = {
 
 export {MainComponent};
 
-MainController.$inject = ['$ngRedux', 'sprintsActions', 'storiesActions', 'stepsActions'];
+MainController.$inject = ['$ngRedux', 'sprintsActions', 'storiesActions', 'stepsActions', 'addressActions'];
 
-function MainController($ngRedux, sprintsActions, storiesActions, stepsActions) {
+function MainController($ngRedux, sprintsActions, storiesActions, stepsActions, addressActions) {
     var vm = this;
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
@@ -19,20 +19,26 @@ function MainController($ngRedux, sprintsActions, storiesActions, stepsActions) 
             number: state.sprint.number,
             stories: state.stories.stories,
             currentStep: state.steps.currentStep,
-            stepIndex:state.steps.index,
+            stepIndex: state.steps.index,
             notification: state.notification.notification,
+            fetchedAddress:state.address.address,
+            address:state.address
 
         };
-    }, Object.assign({}, sprintsActions, storiesActions, stepsActions))(vm);
+    }, Object.assign({}, sprintsActions, storiesActions, stepsActions, addressActions))(vm);
 
     vm.$onInit = $onInit;
 
+
     function $onInit() {
         vm.getSprint();
+
     }
 
-    function nextStep(){
-
+    vm.gotoNext = function(){
+        if(vm.fetchedAddress) {
+            vm.nextStep();
+        }
     }
 
 

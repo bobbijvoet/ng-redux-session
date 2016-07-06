@@ -2,11 +2,11 @@ var initialState = {
     steps: [
         {
             name: 'stap1',
-            template: 'template'
+            template: 'app/templates/tpl.html'
         },
         {
             name: 'Controleren',
-            template: 'template'
+            template: 'app/templates/tpl2.html'
         },
         {
             name: 'Adres gewijzigd',
@@ -37,6 +37,8 @@ function stepsReducer(state, action) {
     state.currentStep = state.steps.find(function (step, index) {
         return index === state.index;
     });
+
+
 
     return state;
 }

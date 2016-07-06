@@ -13,6 +13,7 @@ import {rootReducerConfig} from "./services/reducers/rootReducer.ts";
 import {SprintsActions} from "./services/actions/sprintsActions.ts";
 import {StoriesActions} from "./services/actions/storiesActions.ts";
 import {StepsActions} from "./services/actions/stepsActions.ts";
+import {AddressActions} from "./services/actions/addressActions.ts";
 import {PromiseMiddleware} from "./services/middleware/promiseMiddleware.ts";
 import {LoggerMiddleware} from "./services/middleware/loggerMiddleware.ts";
 import {ThunkMiddleware} from "./services/middleware/thunkMiddleware.ts";
@@ -33,6 +34,7 @@ app.factory('mainService', MainService);
 app.factory('sprintsActions', SprintsActions);
 app.factory('storiesActions', StoriesActions);
 app.factory('stepsActions', StepsActions);
+app.factory('addressActions', AddressActions);
 
 // Middleware
 app.factory('promiseMiddleware', PromiseMiddleware);
