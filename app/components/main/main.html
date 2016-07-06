@@ -1,29 +1,15 @@
-<sprint
-    number="$ctrl.number"
-    stories="$ctrl.stories"
-    burned="$ctrl.burnedPoints"
-    on-mark-done="$ctrl.finishStory"
->
-</sprint>
-
-<notification-component message="$ctrl.notification"></notification-component>
-
-
-
-
-
-<div id="pLifeEventsSeparateAppNavigator" class="panel panel-bordered" name="pLifeEventsSeparateAppNavigator">
-    <div class="panel-heading l-p-0 ng-scope">
+<div id="pLifeEventsSeparateAppNavigator" class="panel panel-bordered">
+    <div class="panel-heading l-p-0">
         <div class="pagination-wrapper pagination-steps-wrapper pagination-steps-wrapper-a">
             <ol class="pagination pagination-steps pagination-steps-a">
-                <li class="pagination-item" ng-class="{'active':$ctrl.stepIndex === 0}">
+                <li class="pagination-item" ng-class="{'active':$ctrl.stepIndex === 0}"  ng-click="$ctrl.goToStep(0)">
                     <span class="pagination-element">
                         <span class="pagination-type ">1</span>
                         <span class="pagination-text ">Adres invullen</span>
                         <span class="arrow pagination-arrow"></span>
                     </span>
                 </li>
-                <li class="pagination-item"  ng-class="{'active':$ctrl.stepIndex === 1}">
+                <li class="pagination-item"  ng-class="{'active':$ctrl.stepIndex === 1}" ng-click="$ctrl.goToStep(1)">
                     <span class="pagination-element">
                         <span class="pagination-type ">2</span>
                         <span class="pagination-text ">Controleren</span>
@@ -41,8 +27,6 @@
         </div>
     </div>
     <div class="panel-body">
-
         <div ng-include="$ctrl.currentStep.template"></div>
-
     </div>
 </div>

@@ -17,6 +17,8 @@ var initialState = {
     currentStep: {}
 };
 
+initialState.currentStep = initialState.steps[0];
+
 function stepsReducer(state, action) {
     if (typeof state === 'undefined') {
         return initialState;
@@ -37,8 +39,6 @@ function stepsReducer(state, action) {
     state.currentStep = state.steps.find(function (step, index) {
         return index === state.index;
     });
-
-
 
     return state;
 }

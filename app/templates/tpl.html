@@ -1,4 +1,4 @@
-<div class="l-mb-1 ">
+<div class="l-mb-1">
         <span
             id="currentAddress"
             class="h-bold">Huidig adres: Von Zesenstraat 4 b 3, 1093AW AMSTERDAM</span>
@@ -62,18 +62,17 @@
     <div class="form-group">
         <label class="control-label col-md-3">Adres</label>
         <div class="col-md-9">
-            <div class="read-only-value">
                 <span ng-show="!$ctrl.address.error && !$ctrl.address.loading && !$ctrl.fetchedAddress">
                     Kies "Adres ophalen" en het adres wordt automatisch ingevuld.
                 </span>
                 <span ng-show="$ctrl.address.loading">
                     Adres aan het laden...
                 </span>
+                <span ng-show="$ctrl.fetchedAddress && !$ctrl.address.loading" class="h-bold">
+                {{$ctrl.fetchedAddress.street}} {{$ctrl.fetchedAddress.houseNumber}} {{$ctrl.fetchedAddress.houseNumberAddition}},<br>
+                    {{$ctrl.fetchedAddress.postalCode}} {{$ctrl.fetchedAddress.city}}
 
-                {{$ctrl.fetchedAddress.street}}
-                {{$ctrl.fetchedAddress.houseNumber}}
-                {{$ctrl.fetchedAddress.city}}
-            </div>
+                </span>
 
             <div class="alert alert-inline alert-danger help-block message"
                  ng-show="$ctrl.address.error && !$ctrl.address.loading">
@@ -99,7 +98,7 @@
         <button
             class="btn btn-primary icon-position icon-after icon-position-lg"
             ng-click="$ctrl.gotoNext()"
-            ng-disabled="$ctrl.address.loading || $ctrl.address.error">
+            ng-disabled="$ctrl.address.loading || $ctrl.address.error || !$ctrl.fetchedAddress">
             <i class="icon icon-arrow-g-right icon-lg"></i>
             Volgende
         </button>

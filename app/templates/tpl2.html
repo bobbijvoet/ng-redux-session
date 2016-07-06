@@ -1,5 +1,51 @@
-{{$ctrl.fetchedAddress | json}}
-<div class="l-mt-n3 l-mb-2 row l-p-2">
+<span class="h-bold">
+
+
+                </span>
+
+
+<div name="uwNieuweAdresForm" class="form-horizontal form-text-only ng-scope ng-pristine ng-valid">
+    <div class="h-bold ng-binding">Adres</div>
+    <div class="form-text-only form-group" id="newAddressControlGroup"
+         >
+        <div class="control-label ng-scope col-lg-3">
+            <span>Uw nieuwe adres</span>
+        </div>
+        <div  class="ng-scope col-lg-6">
+            <div class="form-control-static ng-scope"><span id="newAddress"><div
+                on="address.countryIsoCode">   <!-- ngSwitchWhen: NL -->
+                <div >
+                     {{$ctrl.fetchedAddress.street}} {{$ctrl.fetchedAddress.houseNumber}} {{$ctrl.fetchedAddress.houseNumberAddition}}<br>
+                    {{$ctrl.fetchedAddress.postalCode}} {{$ctrl.fetchedAddress.city}}
+                </div> </div></span></div>
+        </div>
+    </div>
+    <div class="form-text-only form-group ng-isolate-scope" id="navigateToStep1"><!-- ngIf: label -->
+        <div ng-if="!label" ing-form-grid-offset=""
+             class="ng-scope col-lg-offset-3 col-lg-6">
+            <div class="form-control-static ng-scope">
+                <ul class="list-icons list-linklist">
+                    <li><a ng-click="$ctrl.goToStep(0)" href="" class="ng-binding">Wijzigen</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div ng-if="data.children.isUnknownChildMoving !== 'true' || data.children.hasUnknownChild !== 'true'"
+         class="ng-scope">
+        <hr>
+        <div class="h-bold ng-binding">Belangrijk</div>
+        <div id="importantInfo">Heeft u een
+            En/of Betaalrekening? Ook uw mederekeninghouder moet dan zijn nieuwe adres aan ons doorgeven.
+        </div>
+    </div><!-- end ngIf: data.children.isUnknownChildMoving !== 'true' || data.children.hasUnknownChild !== 'true' -->
+</div>
+
+<div class="l-mb-2 row l-p-2">
     <div class="col-lg-3">
 
     </div>

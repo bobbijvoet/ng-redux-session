@@ -8,10 +8,7 @@ function StepsActions() {
         goToStep: goToStep,
     };
 
-    function nextStep(index) {
-        if(index === 1){
-
-        }
+    function nextStep() {
         return {
             type: 'NEXT_STEP'
         }
@@ -25,15 +22,12 @@ function StepsActions() {
 
     function goToStep(index) {
         return {
-            type: 'SET_STEP',
+            type: 'GOTO_STEP',
             payload: {
                 step:index
             }
         }
     }
-
-
-
 }
 
 export {StepsActions};
