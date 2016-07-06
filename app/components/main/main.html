@@ -1,4 +1,4 @@
-<div id="pLifeEventsSeparateAppNavigator" class="panel panel-bordered">
+<div class="panel panel-bordered">
     <div class="panel-heading l-p-0">
         <div class="pagination-wrapper pagination-steps-wrapper pagination-steps-wrapper-a">
             <ol class="pagination pagination-steps pagination-steps-a">
@@ -27,6 +27,8 @@
         </div>
     </div>
     <div class="panel-body">
-        <div ng-include="$ctrl.currentStep.template"></div>
+        <enter-address ng-if="$ctrl.stepIndex === 0"></enter-address>
+        <check-address ng-if="$ctrl.stepIndex === 1"></check-address>
+        <done ng-if="$ctrl.stepIndex === 2"></done>
     </div>
 </div>

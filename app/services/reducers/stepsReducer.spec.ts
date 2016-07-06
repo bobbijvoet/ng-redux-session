@@ -25,7 +25,7 @@ if (!Array.prototype.find) {
 }
 
 
-describe('given the sprint reducer', function () {
+describe('given the steps reducer', function () {
 
     var state = stepsReducer(undefined, undefined);
 
