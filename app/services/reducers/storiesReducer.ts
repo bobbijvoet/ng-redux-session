@@ -14,11 +14,13 @@ function storiesReducer(state, action) {
             break;
 
         case 'FINISH_STORY':
-            var story = state.stories.find(function(story) {
+            var story = state.stories.filter(function(story) {
                return story.id === action.payload.id;
             });
 
-            story.done = true;
+            if (story[0]) {
+                story[0].done = true;
+            }
     }
 
     return state;

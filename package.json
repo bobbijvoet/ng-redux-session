@@ -31,7 +31,7 @@
     "karma-junit-reporter": "^0.3.6",
     "karma-ng-html2js-preprocessor": "^0.1.2",
     "karma-phantomjs-launcher": "^0.2.1",
-    "karma-spec-reporter": "0.0.20",
+    "karma-spec-reporter": "0.0.24",
     "karma-systemjs": "^0.11.0",
     "karma-typescript-preprocessor": "0.0.21",
     "lite-server": "^2.0.1",
