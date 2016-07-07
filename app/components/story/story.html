@@ -3,7 +3,7 @@
            id="checkbox{{$ctrl.story.id}}"
            ng-if="!$ctrl.story.done"
            ng-model="$ctrl.story.done"
-           ng-change="$ctrl.onMarkDone($ctrl.story)"
+           ng-change="$ctrl.onStoryDone($ctrl.story)"
 
     >
     <label for="checkbox{{$ctrl.story.id}}">
