@@ -13,7 +13,7 @@ function sprintReducer(state, action) {
         case 'FETCH_SPRINT_FULFILLED':
             state.number = action.payload.number;
             break;
-        case 'FINISH_STORY':
+        case 'STORY_DONE':
             state.burnedPoints += action.payload.points;
 
             break;

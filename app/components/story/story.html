@@ -1,10 +1,14 @@
 <div>
     <input type="checkbox"
+           id="checkbox{{$ctrl.story.id}}"
            ng-if="!$ctrl.story.done"
            ng-model="$ctrl.story.done"
            ng-change="$ctrl.onMarkDone($ctrl.story)"
+
     >
-    <span ng-class="{'done':$ctrl.story.done}">{{$ctrl.story.description}}</span> <span class="story--points">{{$ctrl.story.points}}</span>
+    <label for="checkbox{{$ctrl.story.id}}">
+        <span ng-class="{'done':$ctrl.story.done}">{{$ctrl.story.description}}</span> <span class="story--points">{{$ctrl.story.points}}</span>
+    </label>
 </div>
 
 
