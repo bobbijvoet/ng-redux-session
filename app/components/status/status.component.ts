@@ -2,7 +2,7 @@ import template from './status.html!text'
 
 var StatusComponent = {
     bindings: {
-        sprintNumber: '<',
+        done: '<',
         burned: '<'
     },
     template: template

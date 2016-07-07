@@ -1,3 +1,5 @@
-
-<span ng-if="$ctrl.burned">{{$ctrl.burned}} points burned</span>
-<span ng-if="!$ctrl.burned">No stories finished</span>
+<div ng-if="!$ctrl.done">
+    <span ng-if="$ctrl.burned">{{$ctrl.burned}} points burned</span>
+    <span ng-if="!$ctrl.burned">No stories finished</span>
+</div>
+<h2 ng-if="$ctrl.done">&#10003; Sprint done</h2>

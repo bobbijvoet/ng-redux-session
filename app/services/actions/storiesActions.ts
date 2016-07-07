@@ -13,7 +13,7 @@ function StoriesActions() {
             }, true);
 
             var action = {
-                type: 'FINISH_STORY',
+                type: 'STORY_DONE',
                 payload: {
                     id: story.id,
                     points:story.points
