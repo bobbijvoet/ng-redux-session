@@ -1,32 +1,30 @@
 StoriesActions.$inject = ['mainService'];
 
-function StoriesActions(mainService) {
+function StoriesActions() {
 
     return {
-        finishStory: finishStory
+        storyDone: storyDone
     };
 
-    function finishStory(story) {
+    function storyDone(story) {
         return function (dispatch, getState) {
-            var allOtherStoriesAreDone = getState().stories.stories.reduce(function(allOtherStoriesAreDone, currentStory) {
-                return allOtherStoriesAreDone && (story.id === currentStory.id || currentStory.done);
+            var allOtherStoriesAreDone = getState().stories.stories.reduce(function(otherStoriesDone, currentStory) {
+                return otherStoriesDone && (story.id === currentStory.id || currentStory.done);
             }, true);
 
             var action = {
                 type: 'FINISH_STORY',
                 payload: {
-                    id: story.id
+                    id: story.id,
+                    points:story.points
                 }
             };
 
-            if (allOtherStoriesAreDone) {
-                action.payload.notification = 'Sprint completed!';
-            }     else {
-                action.payload.notification = 'Stories burned: ' + story.points;
-            }
-            action.payload.points = story.points;
-
             dispatch(action);
+
+            if (allOtherStoriesAreDone) {
+                dispatch({type:'SPRINT_DONE'});
+            }
         };
     }
 }

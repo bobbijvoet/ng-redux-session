@@ -1,8 +1,12 @@
-<header-component sprint-number="$ctrl.number" burned="$ctrl.burned"></header-component>
+<h1>Sprint {{$ctrl.sprintNumber}}</h1>
 
-<h2>Stories</h2>
-<ul>
-    <li ng-repeat="story in $ctrl.stories">
-        <story story="story" on-mark-done="$ctrl.onMarkDone"></story>
-    </li>
-</ul>
+<stories
+    stories="$ctrl.stories"
+    on-mark-done="$ctrl.storyDone">
+</stories>
+
+
+<sprint-status burned="$ctrl.burnedPoints"></sprint-status>
+
+<h2 ng-if="$ctrl.sprintDone">&#10003; Sprint done</h2>
+

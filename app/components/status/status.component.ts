@@ -1,6 +1,6 @@
-import template from './header.html!text'
+import template from './status.html!text'
 
-var HeaderComponent = {
+var StatusComponent = {
     bindings: {
         sprintNumber: '<',
         burned: '<'
@@ -8,4 +8,4 @@ var HeaderComponent = {
     template: template
 };
 
-export {HeaderComponent};
+export {StatusComponent};
