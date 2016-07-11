@@ -17,7 +17,6 @@ function EnterAddressCtrl($ngRedux, addressActions) {
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
-            fetchedAddress:state.address.address,
             address:state.address
         };
     }, Object.assign({}, addressActions))(vm);

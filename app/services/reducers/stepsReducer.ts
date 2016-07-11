@@ -23,19 +23,13 @@ function stepsReducer(state, action) {
 
     switch (action.type) {
         case 'NEXT_STEP':
-            state.index++;
             break;
         case 'PREV_STEP':
-            state.index--;
             break;
         case 'GOTO_STEP':
-            state.index = action.payload.step;
             break;
     }
 
-    state.currentStep = state.steps.find(function (step, index) {
-        return index === state.index;
-    });
 
     return state;
 }

@@ -4,8 +4,8 @@
             <ol class="pagination pagination-steps pagination-steps-a">
                 <li class="pagination-item"
                     ng-repeat="step in $ctrl.steps"
-                    ng-class="{'active':$ctrl.stepIndex === $index}"
-                    ng-click="$ctrl.goToStep($index)">
+                    ng-class="{'active':false}"
+                    ng-click="">
                     <span class="pagination-element">
                         <span class="pagination-type ">{{$index+1}}</span>
                         <span class="pagination-text ">{{step.name}}</span>
@@ -19,7 +19,7 @@
     </div>
     <div class="panel-body">
         <enter-address ng-if="$ctrl.stepIndex === 0" on-next-step="$ctrl.nextStep"></enter-address>
-        <check-address ng-if="$ctrl.stepIndex === 1" on-next-step="$ctrl.nextStep" on-change-address="$ctrl.prevStep"
+        <check-address ng-if="$ctrl.stepIndex === 1" on-next-step="$ctrl.nextStep"
                        address="$ctrl.fetchedAddress"></check-address>
         <done ng-if="$ctrl.stepIndex === 2"></done>
     </div>
