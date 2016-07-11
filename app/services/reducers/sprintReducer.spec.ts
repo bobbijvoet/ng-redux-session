@@ -1,19 +1,31 @@
 import {sprintReducer} from "./sprintReducer.ts";
-import {usingStates} from "../../../test/karma-extensions/usingStates.ts";
 
 describe('given the sprint reducer', function () {
 
-    usingStates(sprintReducer, [
-        [
-            undefined,
-            [{}],
-            {number: 0, burnedPoints: 0, done:false}
-        ],
-        [
-            undefined,
-            [{type: 'FETCH_SPRINT_FULFILLED', payload: {number: 1}}],
-            {number: 1, burnedPoints: 0, done: false}
-        ]
-    ]);
+    var state = sprintReducer(undefined, undefined);
+
+    describe('when initializing', function () {
+        it('should set the initial state', function () {
+            expect(state.burnedPoints).toEqual(0);
+        });
+    });
+
+    describe('when story done', function () {
+        beforeEach(function () {
+            var action = {
+                type: 'STORY_DONE',
+                payload: {
+                    points: 5
+                }
+            };
+            state = sprintReducer(state, action);
+        });
+
+        it('should set burned points', function () {
+            expect(state.burnedPoints).toEqual(5);
+        });
+
+    });
+
 
 });

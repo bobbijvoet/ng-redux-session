@@ -17,6 +17,7 @@ function SprintCtrl($ngRedux, sprintsActions, storiesActions) {
             burnedPoints: state.sprint.burnedPoints,
             sprintDone: state.sprint.done,
             sprintNumber: state.sprint.number,
+            sprintLoading: state.sprint.loading,
             stories: state.stories
         };
     }, Object.assign({}, sprintsActions, storiesActions))(vm);

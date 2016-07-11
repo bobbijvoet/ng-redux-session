@@ -10,7 +10,11 @@ function sprintReducer(state, action) {
     }
 
     switch (action.type) {
+        case 'FETCH_SPRINT_PENDING':
+            state.loading = true;
+            break;
         case 'FETCH_SPRINT_FULFILLED':
+            state.loading = false;
             state.number = action.payload.number;
             break;
         case 'STORY_DONE':
