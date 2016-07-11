@@ -4,7 +4,7 @@ var EnterAddress = {
     controller: EnterAddressCtrl,
     template: template,
     bindings: {
-        onNextClick: '<'
+        onNextStep: '<'
     }
 };
 
@@ -22,11 +22,11 @@ function EnterAddressCtrl($ngRedux, addressActions) {
         };
     }, Object.assign({}, addressActions))(vm);
 
-    //Destroy
+    vm.$onDestroy = unsubscribe;
 
     vm.gotoNext = function(){
         if(vm.fetchedAddress) {
-            vm.onNextClick();
+            vm.onNextStep();
         }
     }
 }

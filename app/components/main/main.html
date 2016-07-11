@@ -2,33 +2,25 @@
     <div class="panel-heading l-p-0">
         <div class="pagination-wrapper pagination-steps-wrapper pagination-steps-wrapper-a">
             <ol class="pagination pagination-steps pagination-steps-a">
-                <li class="pagination-item" ng-class="{'active':$ctrl.stepIndex === 0}"  ng-click="$ctrl.goToStep(0)">
+                <li class="pagination-item"
+                    ng-repeat="step in $ctrl.steps"
+                    ng-class="{'active':$ctrl.stepIndex === $index}"
+                    ng-click="$ctrl.goToStep($index)">
                     <span class="pagination-element">
-                        <span class="pagination-type ">1</span>
-                        <span class="pagination-text ">Adres invullen</span>
-                        <span class="arrow pagination-arrow"></span>
-                    </span>
-                </li>
-                <li class="pagination-item"  ng-class="{'active':$ctrl.stepIndex === 1}" ng-click="$ctrl.goToStep(1)">
-                    <span class="pagination-element">
-                        <span class="pagination-type ">2</span>
-                        <span class="pagination-text ">Controleren</span>
+                        <span class="pagination-type ">{{$index+1}}</span>
+                        <span class="pagination-text ">{{step.name}}</span>
                         <span class="arrow pagination-arrow"></span>
                     </span>
                 </li>
 
             </ol>
 
-            <div class="pagination-complete" ng-class="{'active':$ctrl.stepIndex === 2}">
-                <div class="pagination-complete-item">
-                    <span aria-hidden="true" class="icon"></span>
-                </div>
-            </div>
         </div>
     </div>
     <div class="panel-body">
-        <enter-address ng-if="$ctrl.stepIndex === 0" on-next-click="$ctrl.nextStep"></enter-address>
-        <check-address ng-if="$ctrl.stepIndex === 1" on-next-click="$ctrl.nextStep" address="$ctrl.fetchedAddress"></check-address>
+        <enter-address ng-if="$ctrl.stepIndex === 0" on-next-step="$ctrl.nextStep"></enter-address>
+        <check-address ng-if="$ctrl.stepIndex === 1" on-next-step="$ctrl.nextStep" on-change-address="$ctrl.prevStep"
+                       address="$ctrl.fetchedAddress"></check-address>
         <done ng-if="$ctrl.stepIndex === 2"></done>
     </div>
 </div>
