@@ -1,5 +1,3 @@
-StoriesActions.$inject = ['mainService'];
-
 function StoriesActions() {
 
     return {
@@ -8,8 +6,8 @@ function StoriesActions() {
 
     function storyDone(story) {
         return function (dispatch, getState) {
-            var allOtherStoriesAreDone = getState().stories.stories.reduce(function(otherStoriesDone, currentStory) {
-                return otherStoriesDone && (story.id === currentStory.id || currentStory.done);
+            var allOtherStoriesAreDone = getState().stories.reduce(function(prevStoryDone, currentStory) {
+                return prevStoryDone && (story.id === currentStory.id || currentStory.done);
             }, true);
 
             var action = {

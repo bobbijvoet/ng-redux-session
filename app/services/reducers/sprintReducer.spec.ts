@@ -7,12 +7,12 @@ describe('given the sprint reducer', function () {
         [
             undefined,
             [{}],
-            {number: 0, burnedPoints: 0}
+            {number: 0, burnedPoints: 0, done:false}
         ],
         [
-            {number: 0, burnedPoints: 0},
-            [{ type: 'FETCH_SPRINT_FULFILLED', payload: { number: 1}}],
-            {number: 1, burnedPoints: 0}
+            undefined,
+            [{type: 'FETCH_SPRINT_FULFILLED', payload: {number: 1}}],
+            {number: 1, burnedPoints: 0, done: false}
         ]
     ]);
 
