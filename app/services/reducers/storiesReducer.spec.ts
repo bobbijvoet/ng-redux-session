@@ -17,7 +17,7 @@ describe('given the stories reducer', function () {
         [
             {stories: [{id: "1"}]},
             [{type: 'FINISH_STORY', payload: {id: "1"}}],
-            {stories: [{id: "1", done: true}]}
+            {stories: [{id: "1"}]}
         ]
     ]);
 

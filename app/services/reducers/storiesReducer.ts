@@ -1,6 +1,5 @@
-var initialState = {
-    stories: []
-};
+var initialState = [];
+
 
 function storiesReducer(state, action) {
     if (typeof state === 'undefined') {
@@ -9,17 +8,17 @@ function storiesReducer(state, action) {
 
     switch (action.type) {
         case 'FETCH_SPRINT_FULFILLED':
-            state.stories = action.payload.stories;
+            state = action.payload.stories;
 
             break;
 
         case 'STORY_DONE':
-            var story = state.stories.filter(function(story) {
+            var story = state.find(function(story) {
                return story.id === action.payload.id;
             });
 
-            if (story[0]) {
-                story[0].done = true;
+            if (story) {
+                story.done = true;
             }
     }
 

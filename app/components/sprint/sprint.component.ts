@@ -17,11 +17,12 @@ function SprintCtrl($ngRedux, sprintsActions, storiesActions) {
             burnedPoints: state.sprint.burnedPoints,
             sprintDone: state.sprint.done,
             sprintNumber: state.sprint.number,
-            stories: state.stories.stories
+            stories: state.stories
         };
     }, Object.assign({}, sprintsActions, storiesActions))(vm);
 
     vm.$onInit = $onInit;
+    vm.$onDestroy = unsubscribe;
 
     function $onInit() {
         vm.getSprint();
