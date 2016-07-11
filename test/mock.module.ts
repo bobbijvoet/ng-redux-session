@@ -5,7 +5,7 @@ var server = sinon.fakeServer.create();
 server.xhr.useFilters = true;
 
 server.autoRespond = true;
-server.autoRespondAfter = 10;
+server.autoRespondAfter = 500;
 
 server.respondWith('GET', /api.example.com/, function (xhr, id) {
     xhr.respond(200, {'Content-Type': 'application/json'}, json);

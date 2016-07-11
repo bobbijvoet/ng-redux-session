@@ -1,11 +1,13 @@
-<h1>Sprint {{$ctrl.sprintNumber}}</h1>
+<div ng-if="!$ctrl.sprintLoading">
+    <h1>Sprint {{$ctrl.sprintNumber}}</h1>
 
-<stories
-    stories="$ctrl.stories"
-    on-story-done="$ctrl.storyDone">
-</stories>
+    <stories
+        stories="$ctrl.stories"
+        on-story-done="$ctrl.storyDone">
+    </stories>
 
+    <sprint-status burned="$ctrl.burnedPoints" done="$ctrl.sprintDone"></sprint-status>
+</div>
 
-<sprint-status burned="$ctrl.burnedPoints" done="$ctrl.sprintDone"></sprint-status>
-
+<div ng-if="$ctrl.sprintLoading">Sprint loading...</div>
 
