@@ -3,10 +3,10 @@ SprintsActions.$inject = ['mainService'];
 function SprintsActions(mainService) {
 
     return {
-        getSprint: getSprint
+        fetchSprint: fetchSprint
     };
 
-    function getSprint() {
+    function fetchSprint() {
         return {
             type: 'FETCH_SPRINT',
             payload: {

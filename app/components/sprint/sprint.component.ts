@@ -26,7 +26,7 @@ function SprintCtrl($ngRedux, sprintsActions, storiesActions) {
     vm.$onDestroy = unsubscribe;
 
     function $onInit() {
-        vm.getSprint();
+        vm.fetchSprint();
     }
 
 }
