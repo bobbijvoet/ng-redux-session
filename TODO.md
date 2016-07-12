@@ -1,32 +1,13 @@
-#ng-Redux session
 
-##Presentation 45 min
-- Add new redux visual
-- Explain local state
-- Explain smart/dumb components
-
-
-##Workshop
-
-
-The application:
-- Two way data binding for service result
-- A couple of events being emitted
-What we have prepared:
-- Files for reducers and actions
-- Backend mocking
-- Karma configuration
-
-Steps:
-- Combine reducers
-- Set initial state for stories
-- Connect Main component to vm
-- Get stories via redux
-- Create STORY_FINISHED action
-- Pass action through to components
-- Add unit tests
-- Create time out for notification 
-
-
-##Workshop additions
-- Create simple add story step
+- Map steps state to VM in mainCtrl
+- Map steps actions to VM in mainCtrl
+- Fix next function in reducer
+- Create previous step action
+- Highlight active step in header
+- Jump to any step using the header
+- Create FETCH_ADDRESS action
+- Create the address service call
+- Set booleans for loading state, error state of service call
+- Show loading, error and result texts 
+- Show fetched address on page 2
+- Make the change address button on page 2 work
