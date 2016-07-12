@@ -17,15 +17,11 @@ function EnterAddressCtrl($ngRedux, addressActions) {
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
-            address:state.address
+            fetchedAddress: state.address.address,
+            address: state.address
         };
     }, Object.assign({}, addressActions))(vm);
 
     vm.$onDestroy = unsubscribe;
 
-    vm.gotoNext = function(){
-        if(vm.fetchedAddress) {
-            vm.onNextStep();
-        }
-    }
 }

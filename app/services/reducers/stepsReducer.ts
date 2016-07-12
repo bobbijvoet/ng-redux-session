@@ -25,11 +25,11 @@ function stepsReducer(state, action) {
         case 'NEXT_STEP':
             break;
         case 'PREV_STEP':
+            state.index--;
             break;
         case 'GOTO_STEP':
             break;
     }
-
 
     return state;
 }

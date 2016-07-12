@@ -15,12 +15,11 @@ function MainController($ngRedux, stepsActions, addressActions) {
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
             currentStep: state.steps.currentStep,
-            steps: state.steps.steps,
             stepIndex: state.steps.index,
             fetchedAddress: state.address.address,
             address: state.address
         };
-    }, Object.assign({}, stepsActions, addressActions))(vm);
+    }, Object.assign({}, addressActions))(vm);
 
     vm.$onDestroy = unsubscribe;
 

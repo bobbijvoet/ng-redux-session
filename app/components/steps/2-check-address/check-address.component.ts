@@ -4,7 +4,6 @@ var CheckAddress = {
     template: template,
     bindings: {
         onNextStep: '<',
-        onChangeAddress:'<',
         address:'<'
     }
 };
