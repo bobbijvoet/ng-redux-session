@@ -15,7 +15,9 @@ function StepsActions() {
     }
 
     function prevStep() {
-
+        return {
+            type: 'PREV_STEP'
+        }
     }
 
     function goToStep(index) {

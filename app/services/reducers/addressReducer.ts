@@ -8,10 +8,17 @@ function addressReducer(state, action) {
 
     switch (action.type) {
         case 'FETCH_ADDRESS_PENDING':
+            state.loading = true;
             break;
         case 'FETCH_ADDRESS_FULFILLED':
+            state.loading = false;
+            state.rejected = false;
+
+            state.address = action.payload;
             break;
         case 'FETCH_ADDRESS_REJECTED':
+            state.loading = false;
+            state.rejected = true;
             break;
     }
 

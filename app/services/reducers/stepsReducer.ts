@@ -1,7 +1,11 @@
+
+
+
+
 var initialState = {
     steps: [
         {
-            name: 'Invoeren'
+            name: 'Something'
         },
         {
             name: 'Controleren'
@@ -23,11 +27,14 @@ function stepsReducer(state, action) {
 
     switch (action.type) {
         case 'NEXT_STEP':
+            state.index++;
             break;
         case 'PREV_STEP':
             state.index--;
             break;
         case 'GOTO_STEP':
+            state.index = action.payload.step;
+
             break;
     }
 

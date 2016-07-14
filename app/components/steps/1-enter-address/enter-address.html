@@ -50,7 +50,7 @@
                         <div class="col-lg-4">
                             <input type="submit"
                                    class="btn btn-default"
-                                   ng-click=""
+                                   ng-click="$ctrl.fetchAddress($ctrl.newAddress)"
                                    value="Adres ophalen">
                         </div>
                     </div>
@@ -63,22 +63,22 @@
         <label class="control-label col-md-3">Adres</label>
         <div class="col-md-9">
             <!--Show initial text-->
-                <span ng-show="">
+                <span ng-show="!$ctrl.fetchedAddress && !$ctrl.address.loading && !ctrl.address.rejected">
                     Kies "Adres ophalen" en het adres wordt automatisch ingevuld.
                 </span>
             <!--Show loading text-->
-                <span ng-show="">
+                <span ng-show="$ctrl.address.loading">
                     Adres aan het laden...
                 </span>
             <!--Show fetch address result -->
-                <span ng-show="" class="h-bold">
+                <span ng-show="$ctrl.fetchedAddress && !$ctrl.address.loading" class="h-bold">
                 {{$ctrl.fetchedAddress.street}} {{$ctrl.fetchedAddress.houseNumber}} {{$ctrl.fetchedAddress.houseNumberAddition}},<br>
                     {{$ctrl.fetchedAddress.postalCode}} {{$ctrl.fetchedAddress.city}}
 
                 </span>
             <!--Show error text-->
             <div class="alert alert-inline alert-danger help-block message"
-                 ng-show="">
+                 ng-show="$ctrl.address.rejected">
                         <span class="stacked-icon icon-lg">
                             <i aria-hidden="true" class="icon icon-notification-error-z1 icon-red"></i>
                             <i aria-hidden="true" class="icon icon-white icon-notification-error-z2"></i>

@@ -6,7 +6,7 @@ rootReducerConfig.$inject = ['$ngReduxProvider'];
 
 function rootReducerConfig($ngReduxProvider) {
     var reducer = combineReducers({
-        steps: stepsReducer,
+        stepsState: stepsReducer,
         address:addressReducer
     });
 

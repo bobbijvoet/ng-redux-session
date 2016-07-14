@@ -1,11 +1,12 @@
 <div class="panel panel-bordered">
+
     <div class="panel-heading l-p-0">
         <div class="pagination-wrapper pagination-steps-wrapper pagination-steps-wrapper-a">
             <ol class="pagination pagination-steps pagination-steps-a">
                 <li class="pagination-item"
                     ng-repeat="step in $ctrl.steps"
-                    ng-class="{'active':false}"
-                    ng-click="">
+                    ng-class="{'active':$index === $ctrl.stepIndex}"
+                    ng-click="$ctrl.goToStep($index)">
                     <span class="pagination-element">
                         <span class="pagination-type ">{{$index+1}}</span>
                         <span class="pagination-text ">{{step.name}}</span>
@@ -19,7 +20,7 @@
     </div>
     <div class="panel-body">
         <enter-address ng-if="$ctrl.stepIndex === 0" on-next-step="$ctrl.nextStep"></enter-address>
-        <check-address ng-if="$ctrl.stepIndex === 1" on-next-step="$ctrl.nextStep"></check-address>
+        <check-address ng-if="$ctrl.stepIndex === 1" on-next-step="$ctrl.nextStep" on-change-address="$ctrl.prevStep" address="$ctrl.fetchedAddress"></check-address>
         <done ng-if="$ctrl.stepIndex === 2"></done>
     </div>
 </div>
