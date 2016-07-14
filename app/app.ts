@@ -8,7 +8,7 @@ import {MainConstant} from "./components/main/main.constant.ts";
 
 import {MainService} from "./components/main/main.service.ts";
 
-import {AddressActions} from "./services/actions/addressActions.ts";
+import {TodoActions} from "./services/actions/todoActions.ts";
 
 import {PromiseMiddleware} from "./services/middleware/promiseMiddleware.ts";
 import {LoggerMiddleware} from "./services/middleware/loggerMiddleware.ts";
@@ -25,7 +25,7 @@ app.component('mainComponent', MainComponent);
 app.factory('mainService', MainService);
 
 // Actions
-app.factory('addressActions', AddressActions);
+app.factory('todoActions', TodoActions);
 
 // Middleware
 app.factory('promiseMiddleware', PromiseMiddleware);

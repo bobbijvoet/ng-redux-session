@@ -1,11 +1,13 @@
 import {combineReducers} from 'redux';
-import {addressReducer} from "./addressReducer.ts";
+import {todoReducer} from "./todoReducer.ts";
+import {todosReducer} from "./todosReducer.ts";
 
 rootReducerConfig.$inject = ['$ngReduxProvider'];
 
 function rootReducerConfig($ngReduxProvider) {
     var reducer = combineReducers({
-        address:addressReducer
+        todoState:todoReducer,
+        todosState:todosReducer
     });
 
     $ngReduxProvider.createStoreWith(reducer, [

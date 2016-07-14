@@ -7,15 +7,19 @@ var MainComponent = {
 
 export {MainComponent};
 
-MainController.$inject = ['$ngRedux', 'addressActions'];
+MainController.$inject = ['$ngRedux', 'todoActions'];
 
-function MainController($ngRedux, addressActions) {
+function MainController($ngRedux, todoActions) {
     var vm = this;
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
+
         };
-    }, Object.assign({}, addressActions))(vm);
+    }, Object.assign({}, todoActions))(vm);
+
+
+    todoActions.addTodo('test');
 
     vm.$onDestroy = unsubscribe;
 
