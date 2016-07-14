@@ -7,12 +7,7 @@ function addressReducer(state, action) {
     }
 
     switch (action.type) {
-        case 'FETCH_ADDRESS_PENDING':
-            break;
-        case 'FETCH_ADDRESS_FULFILLED':
-            break;
-        case 'FETCH_ADDRESS_REJECTED':
-            break;
+
     }
 
     return state;

@@ -1,12 +1,10 @@
 import {combineReducers} from 'redux';
-import {stepsReducer} from "./stepsReducer.ts";
 import {addressReducer} from "./addressReducer.ts";
 
 rootReducerConfig.$inject = ['$ngReduxProvider'];
 
 function rootReducerConfig($ngReduxProvider) {
     var reducer = combineReducers({
-        steps: stepsReducer,
         address:addressReducer
     });
 
