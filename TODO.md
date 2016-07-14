@@ -1,6 +1,6 @@
 
 - Map steps state to VM in mainCtrl
-- Map steps actions to VM in mainCtrl
+- Map steps dispatch to VM in mainCtrl
 - Fix next function in reducer
 - Create previous step action
 - Highlight active step in header
