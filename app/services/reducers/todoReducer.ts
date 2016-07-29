@@ -1,13 +1,4 @@
-var initialState = {
-};
-
-function todoReducer(state, action) {
-    if (typeof state === 'undefined') {
-        return initialState;
-    }
-
-
-
+function todoReducer(state = {}, action) {
     switch (action.type) {
         case 'ADD_TODO':
             return {
@@ -19,13 +10,13 @@ function todoReducer(state, action) {
             if(state.id !== action.id) {
                 return state;
             }
-            return {...state, done:true};
+            return Object.assign({}, state, {
+                done: !state.done
+            });
 
         default:
             return state;
     }
-
-
 }
 
 export {todoReducer};

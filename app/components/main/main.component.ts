@@ -14,12 +14,12 @@ function MainController($ngRedux, todoActions) {
 
     var unsubscribe = $ngRedux.connect(function mapStateToCtrl(state) {
         return {
-
+            todos:state.todosState
         };
-    }, Object.assign({}, todoActions))(vm);
+    }, todoActions)(vm);
 
 
-    todoActions.addTodo('test');
+
 
     vm.$onDestroy = unsubscribe;
 

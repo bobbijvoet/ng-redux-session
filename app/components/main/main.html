@@ -1,0 +1,12 @@
+<input type="text" ng-model="text">
+<button ng-click="$ctrl.addTodo(text);">Add</button>
+
+
+<ul>
+    <li ng-repeat="todo in $ctrl.todos">
+        <input type="checkbox" ng-checked="todo.done" ng-click="$ctrl.toggleTodo(todo.id);">
+        {{todo.text}}
+    </li>
+</ul>
+
+

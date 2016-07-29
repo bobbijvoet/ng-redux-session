@@ -1,13 +1,14 @@
 import {combineReducers} from 'redux';
-import {todoReducer} from "./todoReducer.ts";
 import {todosReducer} from "./todosReducer.ts";
+import {visibilityReducer} from "./visibilityReducer.ts";
 
 rootReducerConfig.$inject = ['$ngReduxProvider'];
 
 function rootReducerConfig($ngReduxProvider) {
     var reducer = combineReducers({
-        todoState:todoReducer,
-        todosState:todosReducer
+        todosState:todosReducer,
+        visibilityState:visibilityReducer
+
     });
 
     $ngReduxProvider.createStoreWith(reducer, [
